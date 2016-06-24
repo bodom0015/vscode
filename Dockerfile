@@ -1,10 +1,48 @@
-FROM ubuntu
-
-# Update apt cache
-RUN apt-get update
+#FROM ubuntu
+FROM debian:jessie
 
 # Install vscode dependencies + xvnc
-RUN apt-get -y --no-install-recommends install libgtk2.0-0 libgtk-3-0 libpango-1.0-0 libcairo2 libfontconfig1 libgconf2-4 libnss3 libasound2 libxtst6 unzip libglib2.0-bin libcanberra-gtk-module libgl1-mesa-glx mono-complete curl build-essential gettext libstdc++6 software-properties-common wget git xterm automake libtool autogen rxvt-unicode-256color nodejs libnotify-bin aspell aspell-en htop x11vnc xvfb net-tools python xfonts-basse x11-utils xdotool sudo && \
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install \
+      libgtk2.0-0 \
+      libgtk-3-0 \
+      libpango-1.0-0 \
+      libcairo2 \
+      libfontconfig1 \
+      libgconf2-4 \
+      libnss3 \
+      libasound2 \
+      libxtst6 \
+      unzip \
+      libglib2.0-bin \
+      libcanberra-gtk-module \
+      libgl1-mesa-glx \
+      mono-complete \
+      curl \
+      build-essential \
+      gettext \
+      libstdc++6 \
+      software-properties-common \
+      wget \
+      git \
+      xterm \
+      automake \
+      libtool \
+      autogen \
+      rxvt-unicode-256color \
+      nodejs \
+      libnotify-bin \
+      aspell \
+      aspell-en \
+      htop \
+      x11vnc \
+      xvfb \
+      net-tools \
+      python \
+      xfonts-base \
+      x11-utils \
+      xdotool \
+      sudo && \
     apt-get -y clean all && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
